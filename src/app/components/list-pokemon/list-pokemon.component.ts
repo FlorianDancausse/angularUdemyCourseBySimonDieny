@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { BorderCardDirective } from '../border-card.directive';
-import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
-import { Pokemon } from '../pokemon';
-import { POKEMONS } from '../mock-pokemon-list';
+import { BorderCardDirective } from '../../directives/border-card.directive';
+import { PokemonTypeColorPipe } from '../../pipes/pokemon-type-color.pipe';
+import { Pokemon } from '../../models/pokemon';
+import { POKEMONS } from '../../mocks/mock-pokemon-list';
 import { Router } from '@angular/router';
 
 @Component({

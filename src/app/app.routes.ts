@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
-import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ListPokemonComponent } from './components/list-pokemon/list-pokemon.component';
+import { DetailPokemonComponent } from './components/detail-pokemon/detail-pokemon.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     { path: 'pokemons', component: ListPokemonComponent },
