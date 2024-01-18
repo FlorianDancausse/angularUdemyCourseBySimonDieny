@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Pokemon } from '../../models/pokemon';
-import { PokemonTypeColorPipe } from '../../pipes/pokemon-type-color.pipe';
-import { PokemonService } from '../../services/pokemon.service';
+import { Pokemon } from '../../shared/models/pokemon';
+import { PokemonTypeColorPipe } from '../../shared/pipes/pokemon-type-color.pipe';
+import { PokemonService } from '../../shared/services/pokemon.service';
 
 @Component({
   selector: 'app-detail-pokemon',

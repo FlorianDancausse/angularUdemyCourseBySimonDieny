@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../../models/pokemon';
+import { Pokemon } from '../../shared/models/pokemon';
 import { ActivatedRoute } from '@angular/router';
-import { PokemonService } from '../../services/pokemon.service';
-import { PokemonFormComponent } from '../pokemon-form/pokemon-form.component';
+import { PokemonService } from '../../shared/services/pokemon.service';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

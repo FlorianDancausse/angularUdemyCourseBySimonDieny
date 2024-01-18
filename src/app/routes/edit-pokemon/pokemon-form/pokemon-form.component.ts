@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { PokemonService } from '../../services/pokemon.service';
-import { Pokemon } from '../../models/pokemon';
+import { PokemonService } from '../../../shared/services/pokemon.service';
+import { Pokemon } from '../../../shared/models/pokemon';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { PokemonTypeColorPipe } from '../../pipes/pokemon-type-color.pipe';
+import { PokemonTypeColorPipe } from '../../../shared/pipes/pokemon-type-color.pipe';
 
 @Component({
   selector: 'app-pokemon-form',

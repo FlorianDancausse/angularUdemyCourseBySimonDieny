@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { BorderCardDirective } from '../../directives/border-card.directive';
-import { PokemonTypeColorPipe } from '../../pipes/pokemon-type-color.pipe';
-import { Pokemon } from '../../models/pokemon';
+import { BorderCardDirective } from '../../shared/directives/border-card.directive';
+import { PokemonTypeColorPipe } from '../../shared/pipes/pokemon-type-color.pipe';
+import { Pokemon } from '../../shared/models/pokemon';
 import { Router } from '@angular/router';
-import { PokemonService } from '../../services/pokemon.service';
+import { PokemonService } from '../../shared/services/pokemon.service';
 
 @Component({
   selector: 'app-list-pokemon',
