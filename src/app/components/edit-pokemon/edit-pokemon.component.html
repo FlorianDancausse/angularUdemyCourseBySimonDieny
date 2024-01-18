@@ -1,0 +1,10 @@
+<div *ngIf="pokemon else noPokemon">
+    <h2 class="center">Editer {{ pokemon.name }}</h2>
+    <p class="center">
+        <img [src]="pokemon.picture">
+    </p>
+    <app-pokemon-form [pokemon]="pokemon"></app-pokemon-form>
+</div>
+<ng-template #noPokemon>
+    <h2>Pokemon introuvable.</h2>
+</ng-template>
