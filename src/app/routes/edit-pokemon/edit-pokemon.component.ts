@@ -10,17 +10,23 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, PokemonFormComponent],
   templateUrl: './edit-pokemon.component.html',
-  styleUrl: './edit-pokemon.component.scss'
+  styleUrl: './edit-pokemon.component.scss',
 })
 export class EditPokemonComponent implements OnInit {
-  pokemon: Pokemon|undefined;
+  pokemon: Pokemon | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute, private pokemonService: PokemonService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private pokemonService: PokemonService
+  ) {}
 
   ngOnInit(): void {
-    const pokemonId: string|null = this.activatedRoute.snapshot.paramMap.get('id');
-    if(pokemonId) {
-      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+    const pokemonId: string | null =
+      this.activatedRoute.snapshot.paramMap.get('id');
+    if (pokemonId) {
+      this.pokemonService.getPokemonById(+pokemonId).subscribe({
+        next: (res) => (this.pokemon = res),
+      });
     }
   }
 }

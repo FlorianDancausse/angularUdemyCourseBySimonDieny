@@ -19,6 +19,7 @@ import { PokemonTypeColorPipe } from '../../../shared/pipes/pokemon-type-color.p
 })
 export class PokemonFormComponent implements OnInit {
   @Input() pokemon: Pokemon;
+  isAddForm: boolean;
   types: string[];
 
   constructor(private pokemonService: PokemonService, private router: Router) {
@@ -27,6 +28,7 @@ export class PokemonFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.types = this.pokemonService.getPokemonTypeList();
+    this.isAddForm = this.router.url.includes('add');
   }
 
   hasType(type: string): boolean {
@@ -55,7 +57,21 @@ export class PokemonFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit Form !');
-    this.router.navigate(['/pokemon', this.pokemon.id]);
+    if(this.isAddForm) {
+      this.pokemonService.addPokemon(this.pokemon).subscribe({
+        next:(res: Pokemon) => {
+          this.router.navigate(['/pokemon', res.id]);
+        },
+      });
+    } else {
+      this.pokemonService.updatePokemon(this.pokemon).subscribe({
+        next: () => {
+          this.router.navigate(['/pokemon', this.pokemon.id]);
+        },
+        error: () => {
+          // Snackbar
+        }
+      });      
+    }
   }
 }
